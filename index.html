@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Precision Gym</title>
+  </head>
+  <body>
+    <!-- EXERCISE FORM (initially hidden) -->
+    <div class="linear-gradient-layer"></div>
+    <div class="exercise-form hidden">
+      <div class="close-ex-form">✕</div>
+      <h2>New Exercise</h2>
+      <form action="" class="ex-form">
+        <label for="ex-name">Name<span>*</span>:</label>
+        <input
+          id="ex-name"
+          class="ex-input"
+          type="text"
+          placeholder="e.g. Bench Press"
+        />
+        <label for="weight">Weight (kg):</label>
+        <input id="weight" type="number" />
+        <label for="sets">Sets:</label>
+        <input id="sets" type="number" value="4" />
+        <label for="reps">Reps per set:</label>
+        <input id="reps" type="number" />
+      </form>
+      
+      <button class="add">Add</button>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <img class="logo" src="PrecisionGym.png" alt="Precision Gym logo" />
+    <main>
+      <div class="buttons">
+        <button class="choose-day button--1" data-tab="1">
+          Day 1: Chest/Triceps
+        </button>
+        <button class="choose-day button--2" data-tab="2">
+          Day 2: Back/Bi
+        </button>
+        <button class="add-day">+</button>
+      </div>
+
+      <div class="day day--1 tab--active">
+        <button class="add-exercise add-exercise--1">+ Add Exercise 1</button>
+      </div>
+      <div class="day day--2">
+        <button class="add-exercise">+ Add Exercise 2</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

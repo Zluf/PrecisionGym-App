@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans";
+}
+
+body {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5vw;
+  width: 100%;
+  height: 100vh;
+}
+
+.linear-gradient-layer {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(135deg, white, grey);
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.exercise-form {
+  position: fixed;
+  width: 50vw;
+  background: white;
+  -webkit-transform: translateX(20vw);
+          transform: translateX(20vw);
+  padding: 5vw;
+  z-index: 2;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.exercise-form label,
+.exercise-form input {
+  display: block;
+}
+
+.exercise-form .close-ex-form {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.exercise-form span {
+  color: red;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.292);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.logo {
+  width: 70vw;
+}
+
+main {
+  position: absolute;
+  width: 90%;
+  height: 50vh;
+}
+
+main .exercise {
+  width: 50vw;
+  padding: 2vw;
+  background: #c8c8c8;
+  overflow: scroll;
+}
+
+main .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .choose-day,
+main .day {
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.429);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.429);
+  margin-right: 4px;
+  overflow: hidden;
+}
+
+main button {
+  background: grey;
+  cursor: pointer;
+  min-width: 8vw;
+  border: none;
+  padding: 1.5vw;
+}
+
+main .day {
+  display: none;
+  background: grey;
+  min-height: 50vh;
+  max-height: 70vh;
+  padding: 3vw;
+  overflow: scroll;
+  position: relative;
+}
+
+main .tab--active {
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */

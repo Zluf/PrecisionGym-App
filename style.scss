@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans";
+}
+
+body {
+  position: relative;
+  box-sizing: border-box;
+  padding: 5vw;
+  width: 100%;
+  height: 100vh;
+}
+
+.linear-gradient-layer {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(135deg, white, grey);
+}
+
+// Helper classes
+
+.flex {
+  display: flex;
+}
+
+// ▶️ EXERCISE FORM
+
+.exercise-form {
+  label,
+  input {
+    display: block;
+  }
+
+  position: fixed;
+  width: 50vw;
+  background: white;
+  transform: translateX(20vw);
+  padding: 5vw;
+  z-index: 2;
+  transition: all 0.3s;
+
+  .close-ex-form {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  span {
+    color: red;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.292);
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+//////////////////
+// MAIN STYLONG //
+//////////////////
+
+.logo {
+  width: 70vw;
+}
+
+// ▶️ MAIN SECTION
+
+main {
+  position: absolute;
+  width: 90%;
+  height: 50vh;
+  // background: white;
+
+  .exercise {
+    width: 50vw;
+    padding: 2vw;
+    background: rgb(200, 200, 200);
+    overflow: scroll;
+  }
+
+  .buttons {
+    display: flex;
+  }
+
+  .choose-day,
+  .day {
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.429);
+    margin-right: 4px;
+    overflow: hidden;
+  }
+
+  button {
+    background: grey;
+    cursor: pointer;
+    // border: 2px solid grey;
+    min-width: 8vw;
+    border: none;
+    padding: 1.5vw;
+    // margin-left: -4px;
+  }
+
+  .day {
+    display: none;
+    background: grey;
+    min-height: 50vh;
+    max-height: 70vh;
+    padding: 3vw;
+    overflow: scroll;
+    position: relative;
+    // z-index: 1;
+
+    // border: 2px solid black;
+  }
+
+  // .day--2 {
+  //   background: rgb(255, 149, 0);
+  // }
+  // .day--3 {
+  //   background: rgb(255, 179, 0);
+  // }
+  // .day--4 {
+  //   background: yellow;
+  // }
+  .tab--active {
+    display: block;
+  }
+}
