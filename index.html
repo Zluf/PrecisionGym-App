@@ -11,12 +11,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-
+    <script defer src="script.js"></script>
     <title>Precision Gym</title>
   </head>
   <body>
     <!-- EXERCISE FORM (initially hidden) -->
     <div class="linear-gradient-layer"></div>
+
     <div class="exercise-form hidden">
       <div class="close-ex-form">✕</div>
       <h2>New Exercise</h2>
@@ -40,25 +41,33 @@
     </div>
     <div class="overlay hidden"></div>
 
+    <!-- LOGO -->
     <img class="logo" src="PrecisionGym.png" alt="Precision Gym logo" />
+
+    <!-- DAY BUTTONS-->
     <main>
       <div class="buttons">
-        <button class="choose-day button--1" data-tab="1">
-          Day 1: Chest/Triceps
-        </button>
-        <button class="choose-day button--2" data-tab="2">
-          Day 2: Back/Bi
-        </button>
-        <button class="add-day">+</button>
+        <button class="choose-day button--1" data-tab="1">Mon</button>
+        <button class="choose-day button--2" data-tab="2">Tue</button>
+        <button class="choose-day button--3" data-tab="3">Wed</button>
+        <button class="choose-day button--4" data-tab="4">Thu</button>
+        <button class="choose-day button--5" data-tab="5">Fri</button>
+        <button class="choose-day button--6" data-tab="6">Sat</button>
+        <button class="choose-day button--7" data-tab="7">Sun</button>
+        <!-- <button class="add-day">+</button> -->
       </div>
 
+      <!-- DAY W/O MAIN WINDOW-->
       <div class="day day--1 tab--active">
+        <div class="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <label for="checkbox">Rest Day</label>
+        </div>
         <button class="add-exercise add-exercise--1">+ Add Exercise 1</button>
       </div>
       <div class="day day--2">
         <button class="add-exercise">+ Add Exercise 2</button>
       </div>
     </main>
-    <script src="script.js"></script>
   </body>
 </html>

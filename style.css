@@ -92,9 +92,13 @@ main .exercise {
 }
 
 main .buttons {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 main .choose-day,
@@ -106,9 +110,9 @@ main .day {
 }
 
 main button {
+  width: 15%;
   background: grey;
   cursor: pointer;
-  min-width: 8vw;
   border: none;
   padding: 1.5vw;
 }
@@ -121,6 +125,61 @@ main .day {
   padding: 3vw;
   overflow: scroll;
   position: relative;
+}
+
+main .checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2vw;
+  font-size: 1rem;
+}
+
+main .checkbox label {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .checkbox input {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
+main .checkbox label::before {
+  content: "";
+  width: 2.8vw;
+  height: 2.8vw;
+  background: white;
+  margin-right: 1.5vw;
+}
+
+main .checkbox label:hover::before {
+  background: lightgrey;
+}
+
+main .checkbox input:checked + label::before {
+  content: "\002713";
+  background: blue;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5vw;
 }
 
 main .tab--active {

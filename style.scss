@@ -96,7 +96,9 @@ main {
   }
 
   .buttons {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
   }
 
   .choose-day,
@@ -107,13 +109,15 @@ main {
   }
 
   button {
+    width: 15%;
     background: grey;
     cursor: pointer;
     // border: 2px solid grey;
-    min-width: 8vw;
+    // min-width: 8vw;
     border: none;
     padding: 1.5vw;
     // margin-left: -4px;
+    // border: 1px solid black;
   }
 
   .day {
@@ -124,9 +128,47 @@ main {
     padding: 3vw;
     overflow: scroll;
     position: relative;
-    // z-index: 1;
+  }
 
-    // border: 2px solid black;
+  .checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2vw;
+    font-size: 1rem;
+
+    label {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    input {
+      cursor: pointer;
+      opacity: 0;
+      position: absolute;
+    }
+
+    label::before {
+      content: "";
+      width: 2.8vw;
+      height: 2.8vw;
+      background: white;
+      margin-right: 1.5vw;
+    }
+
+    label:hover::before {
+      background: lightgrey;
+    }
+
+    input:checked + label::before {
+      content: "\002713";
+      background: blue;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5vw;
+    }
   }
 
   // .day--2 {

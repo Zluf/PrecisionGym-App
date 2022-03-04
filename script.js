@@ -10,6 +10,7 @@ const exerciseForm = document.querySelector(".exercise-form");
 const overlay = document.querySelector(".overlay");
 const addDay = document.querySelector(".add-day");
 const mainSection = document.querySelector("main");
+const checkBox = document.querySelector(".checkbox");
 
 // ▶️ ADD EXERCISE (modal window)
 
@@ -67,7 +68,7 @@ const addExercise = function () {
     .querySelector(`.day--${curDay}`)
     .insertAdjacentHTML("beforeend", newExHTML);
 
-  console.log(exBtnCur);
+  checkBox.style.display = "none";
 };
 
 document.addEventListener("keydown", function (e) {
@@ -77,25 +78,26 @@ document.addEventListener("keydown", function (e) {
 
 document.querySelector(".add").addEventListener("click", addExercise);
 
-// ▶️ ADDING NEW SECTION (+ Day)
+// ▶️ ADDING NEW SECTION (+ Day) - 🚩 to implements later
 
-buttonsContainer.addEventListener("click", function (e) {
-  // finds the wanted elemend
-  const clicked = e.target.closest(".add-day");
-  // Guard Clause
-  if (!clicked) return;
-  if (clicked) {
-    daysTotal.push(daysTotal.length + 1);
-    console.log(daysTotal);
-    const newDayButtonHTML = `<button class="choose-day button--${daysTotal.length}" data-tab="${daysTotal.length}">Day
-    </button>`;
-    const newDaySectonHTML = `<div class="day day--${daysTotal.length}">
-    <button class="add-exercise">+ Add Exercise ${daysTotal.length}</button>
-    </div>`;
-    addDay.insertAdjacentHTML("beforebegin", newDayButtonHTML);
-    mainSection.insertAdjacentHTML("beforeend", newDaySectonHTML);
-  }
-});
+// buttonsContainer.addEventListener("click", function (e) {
+//   // finds the wanted elemend
+//   const clicked = e.target.closest(".add-day");
+//   // Guard Clause
+//   if (!clicked) return;
+//   if (clicked) {
+//     daysTotal.push(daysTotal.length + 1);
+//     console.log(daysTotal);
+//     const newDayButtonHTML = `<button class="choose-day button--${daysTotal.length}" data-tab="${daysTotal.length}">Day
+//     </button>`;
+//     const newDaySectonHTML = `<div class="day day--${daysTotal.length}">
+//     <button class="add-exercise">+ Add Exercise ${daysTotal.length}</button>
+//     </div>`;
+//     addDay.insertAdjacentHTML("beforebegin", newDayButtonHTML);
+//     mainSection.insertAdjacentHTML("beforeend", newDaySectonHTML);
+
+//   }
+// });
 
 // ▶️ Choosing the workout day (switching between tabs)
 
@@ -117,5 +119,3 @@ buttonsContainer.addEventListener("click", function (e) {
     console.log(curDay);
   }
 });
-
-// ! Фиксировать новые номера кнопок и окон в МАССИВах и ОБЪЕКТах (отдельная секция в JS-файле сверху)
