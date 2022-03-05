@@ -162,12 +162,12 @@ main {
 
     input:checked + label::before {
       content: "\002713";
-      background: blue;
-      color: white;
+      // background: blue;
+      color: black;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 1.5vw;
+      font-size: 2rem;
     }
   }
 
