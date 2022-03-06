@@ -12,7 +12,14 @@ const dayExercises = document.querySelector(".day__exercises");
 
 let currentDay = 1;
 
+let day1Exercises = [];
+let curButNo = 0;
+
+// console.log(day1Exercises.length);
+
+//
 // 🔘 "REST DAY BUTTON"
+//
 
 checkBox.forEach((box) => {
   box.addEventListener("click", function () {
@@ -27,19 +34,36 @@ checkBox.forEach((box) => {
   });
 });
 
-// ▶️ ADD EXERCISE (modal window)
+//
+// 🔘 "ADD EXERCISE" button - Opening and closing modal window
+//
 
+// ❌
 const closeExerciseForm = function () {
   exerciseForm.classList.add("hidden");
   overlay.classList.add("hidden");
 };
 
-// 🔘 "ADD EXERECISE" button - Opening and closing modal window
-
-let clickedButton;
-
+// 📂
 document.addEventListener("click", function (e) {
-  if (e.target.closest(".add-exercise")) {
+  const target = e.target.closest(".add-exercise");
+
+  if (target) {
+    // const newExHTML = `
+    // <section class='exercise'>
+    // <div class='ex-name'>Exercise:</div>
+    // <div class='ex-weight'>Weight:</div>
+    // <div>Set 1:</div>
+    // </section>
+    // <button class="add-exercise">+ Add Exercise</button>
+    // `;
+
+    // target.insertAdjacentHTML("afterend", newExHTML);
+
+    const arr = e.target.classList[1].split("");
+    curButNo = arr[arr.length - 1];
+    console.log(curButNo);
+
     exerciseForm.classList.remove("hidden");
     overlay.classList.remove("hidden");
 
@@ -67,12 +91,14 @@ const addExercise = function () {
   const exercise = document.querySelector("form #ex-name").value;
   const weight = document.querySelector("form #weight").value;
   const newExHTML = `
-    <section class='exercise'>
+    <section class='exercise ex${curButNo}'>
     <div class='ex-name'>Exercise: ${exercise} </div>
     <div class='ex-weight'>Weight: ${weight}kg </div>
     <div>Set 1:</div>
     </section>
-    <button class="add-exercise">+ Add Exercise</button>
+    <button class="add-exercise add-exercise--${
+      +curButNo + 1
+    }">+ Add Exercise</button>
     `;
 
   document.querySelectorAll("input").forEach((i) => (i.value = ""));
@@ -80,8 +106,14 @@ const addExercise = function () {
   closeExerciseForm();
 
   document
-    .querySelector(`.day--${currentDay} .day-exercises`)
-    .insertAdjacentHTML("beforeend", newExHTML);
+    .querySelector(
+      `.day--${currentDay} .day-exercises .add-exercise--${curButNo}`
+    )
+    .insertAdjacentHTML("afterend", newExHTML);
+
+  day1Exercises.push({ name: `${exercise}`, weight: `${weight}`, sets: 0 });
+
+  console.log(day1Exercises);
 };
 
 document.addEventListener("keydown", function (e) {
@@ -112,7 +144,9 @@ document.querySelector(".add").addEventListener("click", addExercise);
 //   }
 // });
 
+//
 // 🔘 "WEEKDAY" button (switching between W/O days)
+//
 
 buttonsContainer.addEventListener("click", function (e) {
   // finds the wanted elemend
