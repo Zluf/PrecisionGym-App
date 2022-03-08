@@ -15,8 +15,6 @@ let currentDay = 1;
 let day1Exercises = [];
 let curButNo = 0;
 
-// console.log(day1Exercises.length);
-
 //
 // 🔘 "REST DAY BUTTON"
 //
@@ -49,17 +47,6 @@ document.addEventListener("click", function (e) {
   const target = e.target.closest(".add-exercise");
 
   if (target) {
-    // const newExHTML = `
-    // <section class='exercise'>
-    // <div class='ex-name'>Exercise:</div>
-    // <div class='ex-weight'>Weight:</div>
-    // <div>Set 1:</div>
-    // </section>
-    // <button class="add-exercise">+ Add Exercise</button>
-    // `;
-
-    // target.insertAdjacentHTML("afterend", newExHTML);
-
     const arr = e.target.classList[1].split("");
     curButNo = arr[arr.length - 1];
     console.log(curButNo);
