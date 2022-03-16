@@ -103,10 +103,14 @@ main .buttons {
 
 main .choose-day,
 main .day {
+  height: 50px;
+  font-size: 12px;
   -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.429);
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.429);
   margin-right: 4px;
   overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 main button {

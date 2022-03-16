@@ -74,6 +74,12 @@ document.addEventListener("click", function (e) {
 
 // ・ Adding user data
 
+const addSet = new Promise(function (resolve, reject) {
+  if (Boolean(document.querySelector(".add-set"))) {
+    resolve("Yay!");
+  } else reject("Nay!");
+});
+
 const addExercise = function () {
   const exercise = document.querySelector("form #ex-name").value;
   const weight = document.querySelector("form #weight").value;
@@ -82,6 +88,7 @@ const addExercise = function () {
     <div class='ex-name'>Exercise: ${exercise} </div>
     <div class='ex-weight'>Weight: ${weight}kg </div>
     <div>Set 1:</div>
+    <button class="add-set">+ Set ${curButNo}</button>
     </section>
     <button class="add-exercise add-exercise--${
       +curButNo + 1
@@ -102,6 +109,8 @@ const addExercise = function () {
 
   console.log(day1Exercises);
 };
+
+// addSet.then((resp) => console.log(resp));
 
 document.addEventListener("keydown", function (e) {
   if (!exerciseForm.classList.contains("hidden") && e.key === "Enter")
@@ -142,14 +151,25 @@ buttonsContainer.addEventListener("click", function (e) {
   if (clicked) {
     // Hide inactive day windows
     const days = document.querySelectorAll(".day");
+    const tabs = document.querySelectorAll(".choose-day");
     days.forEach((day) => {
       day.classList.remove("tab--active");
+    });
+    tabs.forEach((tab) => {
+      tab.style.fontWeight = "lighter";
+      tab.style.fontSize = "12px";
+      tab.style.height = "50px";
     });
     // Bring up the active day window
     document
       .querySelector(`.day--${clicked.dataset.tab}`)
       .classList.add("tab--active");
     currentDay = clicked.dataset.tab;
+    clicked.style.fontWeight = "bolder";
+    clicked.style.fontSize = "1.5rem";
+    clicked.style.height = "70px";
     console.log(`You're on day ${currentDay}`);
   }
 });
+
+// console.log(Boolean(document.querySelector("img")));

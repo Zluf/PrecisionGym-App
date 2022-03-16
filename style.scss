@@ -103,9 +103,12 @@ main {
 
   .choose-day,
   .day {
+    height: 50px;
+    font-size: 12px;
     box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.429);
     margin-right: 4px;
     overflow: hidden;
+    transition: all 0.3s;
   }
 
   button {
